@@ -1,8 +1,8 @@
-// 1. Mostrar tots els documents en la col·lecció Restaurants.
+// 1- Escriu una consulta per mostrar tots els documents en la col·lecció Restaurants.
+db.Restaurants.find();
 
-
-// 2. Mostrar el restaurant_id i name per tots els documents en la col·lecció Restaurants.
-
+// 2- Escriu una consulta per mostrar el restaurant_id, name, borough i cuisine per tots els documents en la col·lecció Restaurants.
+db.Restaurants.find({}, {restaurant_id: 1, name: 1, borough: 1, cuisine: 1});
 
 // 3. Mostrar el restaurant_id, name, borough i cuisine.
 
