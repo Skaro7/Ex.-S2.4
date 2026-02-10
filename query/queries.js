@@ -1,3 +1,4 @@
+
 // 1- Escriu una consulta per mostrar tots els documents en la col·lecció Restaurants.
 db.Restaurants.find();
 
@@ -26,14 +27,14 @@ db.Restaurants.find({"grades.score": {$gt: 90}});
 db.Restaurants.find({"grades.score": {$gt: 80, $lt: 100}});
 
 // 10. Trobar els restaurants amb longitud menor que -95.754168.
-db.Restaurants.find({"address.coord.0": {$lt: -95.754168}});
+db.Restaurants.find({"location.coordinates.0": {$lt: -95.754168}});
 
 // 11. Trobar restaurants que no preparen 'American', amb qualificació > 70 i longitud < -65.754168.
 db.Restaurants.find({
     $and: [
         {cuisine: {$ne: "American"}},
         {"grades.score": {$gt: 70}},
-        {"address.coord.0": {$lt: -65.754168}}
+        {"location.coordinates.0": {$lt: -65.754168}}
     ]
 });
 
@@ -41,7 +42,7 @@ db.Restaurants.find({
 db.Restaurants.find({
     cuisine: {$ne: "American"},
     "grades.score": {$gt: 70},
-    "address.coord.0": {$lt: -65.754168}
+    "location.coordinates.0": {$lt: -65.754168}
 });
 
 // 13. Trobar restaurants que no són 'American', grau 'A', i no són de Brooklyn. Ordenats per cuisine descendent.
